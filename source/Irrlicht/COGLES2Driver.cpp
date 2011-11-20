@@ -18,8 +18,13 @@
 #include "CImage.h"
 #include "os.h"
 
-#include <EGL/egl.h>
-#include <GLES2/gl2.h>
+#if defined(_IRR_COMPILE_WITH_IPHONE_DEVICE_)
+#    include <OpenGLES/ES2/gl.h>
+#    include <OpenGLES/ES2/glext.h>
+#else
+#    include <EGL/egl.h>
+#    include <GLES2/gl2.h>
+#endif
 
 namespace irr
 {
@@ -36,8 +41,7 @@ namespace video
 		: CNullDriver(io, params.WindowSize), COGLES2ExtensionHandler(),
 		CurrentRenderMode(ERM_NONE), ResetRenderStates(true),
 		Transformation3DChanged(true), AntiAlias(params.AntiAlias),
-		RenderTargetTexture(0), CurrentRendertargetSize(0, 0), ColorFormat(ECF_R8G8B8),
-		EglDisplay(EGL_NO_DISPLAY)
+		RenderTargetTexture(0), CurrentRendertargetSize(0, 0), ColorFormat(ECF_R8G8B8)
 #if defined(_IRR_COMPILE_WITH_WINDOWS_DEVICE_)
 		, HDc(0)
 #elif defined(_IRR_COMPILE_WITH_IPHONE_DEVICE_)
@@ -55,15 +59,18 @@ namespace video
 #endif
 		ExposedData = data;
 #if defined(_IRR_COMPILE_WITH_WINDOWS_DEVICE_)
+        EglDisplay = EGL_NO_DISPLAY;
 		EglWindow = (NativeWindowType)data.OpenGLWin32.HWnd;
 		HDc = GetDC((HWND)EglWindow);
 		EglDisplay = eglGetDisplay((NativeDisplayType)HDc);
 #elif defined(_IRR_COMPILE_WITH_X11_DEVICE_)
+        EglDisplay = EGL_NO_DISPLAY;
 		EglWindow = (NativeWindowType)ExposedData.OpenGLLinux.X11Window;
 		EglDisplay = eglGetDisplay((NativeDisplayType)ExposedData.OpenGLLinux.X11Display);
 #elif defined(_IRR_COMPILE_WITH_IPHONE_DEVICE_)
 		Device = device;
 #endif
+#ifdef EGL_VERSION_1_0
 		if (EglDisplay == EGL_NO_DISPLAY)
 		{
 			os::Printer::log("Getting OpenGL-ES2 display.");
@@ -231,6 +238,7 @@ namespace video
 		// set vsync
 		if (params.Vsync)
 			eglSwapInterval(EglDisplay, 1);
+#endif
 	}
 
 
@@ -240,6 +248,7 @@ namespace video
 		deleteMaterialRenders();
 		deleteAllTextures();
 
+#if defined(EGL_VERSION_1_0)
 		// HACK : the following is commented because destroying the context crashes under Linux (Thibault 04-feb-10)
 		/*eglMakeCurrent(EGL_NO_DISPLAY, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
 		eglDestroyContext(EglDisplay, EglContext);
@@ -249,6 +258,7 @@ namespace video
 #if defined(_IRR_COMPILE_WITH_WINDOWS_DEVICE_)
 		if (HDc)
 			ReleaseDC((HWND)EglWindow, HDc);
+#endif
 #endif
 
 		delete TwoDRenderer;
@@ -264,7 +274,9 @@ namespace video
 		Name = glGetString(GL_VERSION);
 		printVersion();
 
+#if defined(EGL_VERSION_1_0)
 		os::Printer::log(eglQueryString(EglDisplay, EGL_CLIENT_APIS));
+#endif
 
 		// print renderer information
 		vendorName = glGetString(GL_VENDOR);
@@ -275,7 +287,9 @@ namespace video
 			CurrentTexture[i] = 0;
 		// load extensions
 		initExtensions(this,
-						EglDisplay,
+#if defined(EGL_VERSION_1_0)
+                        EglDisplay,
+#endif
 						stencilBuffer);
 
 		StencilBuffer = stencilBuffer;
@@ -393,6 +407,7 @@ namespace video
 	{
 		CNullDriver::endScene();
 
+#if defined(EGL_VERSION_1_0)
 		eglSwapBuffers(EglDisplay, EglSurface);
 		EGLint g = eglGetError();
 		if (EGL_SUCCESS != g)
@@ -407,6 +422,7 @@ namespace video
 			return false;
 		}
 		return true;
+#endif
 	}
 
 
@@ -2827,6 +2843,7 @@ namespace irr
 {
 namespace video
 {
+#if !defined(_IRR_COMPILE_WITH_IPHONE_DEVICE_)
 
 #if defined(_IRR_COMPILE_WITH_X11_DEVICE_) || defined(_IRR_COMPILE_WITH_SDL_DEVICE_) || defined(_IRR_COMPILE_WITH_WINDOWS_DEVICE_) || defined(_IRR_COMPILE_WITH_CONSOLE_DEVICE_)
 	IVideoDriver* createOGLES2Driver(const SIrrlichtCreationParameters& params,
@@ -2854,6 +2871,8 @@ namespace video
 #endif // _IRR_COMPILE_WITH_OGLES2_
 	}
 #endif // _IRR_COMPILE_WITH_OSX_DEVICE_
+
+#endif
 
 // -----------------------------------
 // IPHONE VERSION

@@ -584,6 +584,24 @@
 		839A2EAD14779B05001E91D6 /* COGLESMaterialRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 839A2E9614779B04001E91D6 /* COGLESMaterialRenderer.h */; };
 		839A2EAE14779B05001E91D6 /* COGLESExtensionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 839A2E9714779B04001E91D6 /* COGLESExtensionHandler.h */; };
 		839A2EAF14779B05001E91D6 /* COGLESExtensionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 839A2E9814779B04001E91D6 /* COGLESExtensionHandler.cpp */; };
+		83BED1A21479348000B51A7E /* COGLES2Driver.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BED1911479348000B51A7E /* COGLES2Driver.h */; };
+		83BED1A31479348000B51A7E /* COGLES2ExtensionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83BED1921479348000B51A7E /* COGLES2ExtensionHandler.cpp */; };
+		83BED1A41479348100B51A7E /* COGLES2ExtensionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BED1931479348000B51A7E /* COGLES2ExtensionHandler.h */; };
+		83BED1A51479348100B51A7E /* COGLES2FixedPipelineShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83BED1941479348000B51A7E /* COGLES2FixedPipelineShader.cpp */; };
+		83BED1A61479348100B51A7E /* COGLES2FixedPipelineShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BED1951479348000B51A7E /* COGLES2FixedPipelineShader.h */; };
+		83BED1A71479348100B51A7E /* COGLES2MaterialRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BED1961479348000B51A7E /* COGLES2MaterialRenderer.h */; };
+		83BED1A81479348100B51A7E /* COGLES2NormalMapRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83BED1971479348000B51A7E /* COGLES2NormalMapRenderer.cpp */; };
+		83BED1A91479348100B51A7E /* COGLES2NormalMapRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BED1981479348000B51A7E /* COGLES2NormalMapRenderer.h */; };
+		83BED1AA1479348100B51A7E /* COGLES2ParallaxMapRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83BED1991479348000B51A7E /* COGLES2ParallaxMapRenderer.cpp */; };
+		83BED1AB1479348100B51A7E /* COGLES2ParallaxMapRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BED19A1479348000B51A7E /* COGLES2ParallaxMapRenderer.h */; };
+		83BED1AC1479348100B51A7E /* COGLES2Renderer2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83BED19B1479348000B51A7E /* COGLES2Renderer2D.cpp */; };
+		83BED1AD1479348100B51A7E /* COGLES2Renderer2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BED19C1479348000B51A7E /* COGLES2Renderer2D.h */; };
+		83BED1AE1479348100B51A7E /* COGLES2SLMaterialRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83BED19D1479348000B51A7E /* COGLES2SLMaterialRenderer.cpp */; };
+		83BED1AF1479348100B51A7E /* COGLES2SLMaterialRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BED19E1479348000B51A7E /* COGLES2SLMaterialRenderer.h */; };
+		83BED1B01479348100B51A7E /* COGLES2Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83BED19F1479348000B51A7E /* COGLES2Texture.cpp */; };
+		83BED1B11479348100B51A7E /* COGLES2Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BED1A01479348000B51A7E /* COGLES2Texture.h */; };
+		83BED1B21479348100B51A7E /* COGLES2Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BED1A11479348000B51A7E /* COGLES2Utils.h */; };
+		83BED1CF14793A0D00B51A7E /* COGLES2Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83BED1CE14793A0D00B51A7E /* COGLES2Driver.cpp */; };
 		95154774133CD9DA008D792F /* aabbox3d.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CFA7C0A0A88742800B03626 /* aabbox3d.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95154775133CD9DA008D792F /* CMeshBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0910B9FD0D1F64B300D46B04 /* CMeshBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95154776133CD9DA008D792F /* coreutil.h in Headers */ = {isa = PBXBuildFile; fileRef = 0910B9FE0D1F64B300D46B04 /* coreutil.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2102,6 +2120,24 @@
 		839A2E9614779B04001E91D6 /* COGLESMaterialRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLESMaterialRenderer.h; sourceTree = "<group>"; };
 		839A2E9714779B04001E91D6 /* COGLESExtensionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLESExtensionHandler.h; sourceTree = "<group>"; };
 		839A2E9814779B04001E91D6 /* COGLESExtensionHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COGLESExtensionHandler.cpp; sourceTree = "<group>"; };
+		83BED1911479348000B51A7E /* COGLES2Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLES2Driver.h; sourceTree = "<group>"; };
+		83BED1921479348000B51A7E /* COGLES2ExtensionHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COGLES2ExtensionHandler.cpp; sourceTree = "<group>"; };
+		83BED1931479348000B51A7E /* COGLES2ExtensionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLES2ExtensionHandler.h; sourceTree = "<group>"; };
+		83BED1941479348000B51A7E /* COGLES2FixedPipelineShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COGLES2FixedPipelineShader.cpp; sourceTree = "<group>"; };
+		83BED1951479348000B51A7E /* COGLES2FixedPipelineShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLES2FixedPipelineShader.h; sourceTree = "<group>"; };
+		83BED1961479348000B51A7E /* COGLES2MaterialRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLES2MaterialRenderer.h; sourceTree = "<group>"; };
+		83BED1971479348000B51A7E /* COGLES2NormalMapRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COGLES2NormalMapRenderer.cpp; sourceTree = "<group>"; };
+		83BED1981479348000B51A7E /* COGLES2NormalMapRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLES2NormalMapRenderer.h; sourceTree = "<group>"; };
+		83BED1991479348000B51A7E /* COGLES2ParallaxMapRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COGLES2ParallaxMapRenderer.cpp; sourceTree = "<group>"; };
+		83BED19A1479348000B51A7E /* COGLES2ParallaxMapRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLES2ParallaxMapRenderer.h; sourceTree = "<group>"; };
+		83BED19B1479348000B51A7E /* COGLES2Renderer2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COGLES2Renderer2D.cpp; sourceTree = "<group>"; };
+		83BED19C1479348000B51A7E /* COGLES2Renderer2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLES2Renderer2D.h; sourceTree = "<group>"; };
+		83BED19D1479348000B51A7E /* COGLES2SLMaterialRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COGLES2SLMaterialRenderer.cpp; sourceTree = "<group>"; };
+		83BED19E1479348000B51A7E /* COGLES2SLMaterialRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLES2SLMaterialRenderer.h; sourceTree = "<group>"; };
+		83BED19F1479348000B51A7E /* COGLES2Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COGLES2Texture.cpp; sourceTree = "<group>"; };
+		83BED1A01479348000B51A7E /* COGLES2Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLES2Texture.h; sourceTree = "<group>"; };
+		83BED1A11479348000B51A7E /* COGLES2Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COGLES2Utils.h; sourceTree = "<group>"; };
+		83BED1CE14793A0D00B51A7E /* COGLES2Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COGLES2Driver.cpp; sourceTree = "<group>"; };
 		959726FD12C18FFC00BF73D3 /* IrrFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IrrFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		959726FE12C18FFC00BF73D3 /* IrrFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "IrrFramework-Info.plist"; path = "svn/irrlicht1.7/source/Irrlicht/MacOSX/IrrFramework-Info.plist"; sourceTree = SYSTEM_DEVELOPER_DIR; };
 		95972B8312C19A5C00BF73D3 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -2903,6 +2939,7 @@
 		0910BA8B0D1F71D600D46B04 /* video */ = {
 			isa = PBXGroup;
 			children = (
+				83BED18F1479346900B51A7E /* OpenGLES2 */,
 				839A2E9314779AF7001E91D6 /* OpenGLES */,
 				0910BA8C0D1F729400D46B04 /* Burning Video */,
 				0910BA8D0D1F72DB00D46B04 /* Direct3D8 */,
@@ -3719,6 +3756,31 @@
 			name = OpenGLES;
 			sourceTree = "<group>";
 		};
+		83BED18F1479346900B51A7E /* OpenGLES2 */ = {
+			isa = PBXGroup;
+			children = (
+				83BED1911479348000B51A7E /* COGLES2Driver.h */,
+				83BED1CE14793A0D00B51A7E /* COGLES2Driver.cpp */,
+				83BED1921479348000B51A7E /* COGLES2ExtensionHandler.cpp */,
+				83BED1931479348000B51A7E /* COGLES2ExtensionHandler.h */,
+				83BED1941479348000B51A7E /* COGLES2FixedPipelineShader.cpp */,
+				83BED1951479348000B51A7E /* COGLES2FixedPipelineShader.h */,
+				83BED1961479348000B51A7E /* COGLES2MaterialRenderer.h */,
+				83BED1971479348000B51A7E /* COGLES2NormalMapRenderer.cpp */,
+				83BED1981479348000B51A7E /* COGLES2NormalMapRenderer.h */,
+				83BED1991479348000B51A7E /* COGLES2ParallaxMapRenderer.cpp */,
+				83BED19A1479348000B51A7E /* COGLES2ParallaxMapRenderer.h */,
+				83BED19B1479348000B51A7E /* COGLES2Renderer2D.cpp */,
+				83BED19C1479348000B51A7E /* COGLES2Renderer2D.h */,
+				83BED19D1479348000B51A7E /* COGLES2SLMaterialRenderer.cpp */,
+				83BED19E1479348000B51A7E /* COGLES2SLMaterialRenderer.h */,
+				83BED19F1479348000B51A7E /* COGLES2Texture.cpp */,
+				83BED1A01479348000B51A7E /* COGLES2Texture.h */,
+				83BED1A11479348000B51A7E /* COGLES2Utils.h */,
+			);
+			name = OpenGLES2;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -3986,6 +4048,16 @@
 				839A2EAB14779B05001E91D6 /* COGLESTexture.h in Headers */,
 				839A2EAD14779B05001E91D6 /* COGLESMaterialRenderer.h in Headers */,
 				839A2EAE14779B05001E91D6 /* COGLESExtensionHandler.h in Headers */,
+				83BED1A21479348000B51A7E /* COGLES2Driver.h in Headers */,
+				83BED1A41479348100B51A7E /* COGLES2ExtensionHandler.h in Headers */,
+				83BED1A61479348100B51A7E /* COGLES2FixedPipelineShader.h in Headers */,
+				83BED1A71479348100B51A7E /* COGLES2MaterialRenderer.h in Headers */,
+				83BED1A91479348100B51A7E /* COGLES2NormalMapRenderer.h in Headers */,
+				83BED1AB1479348100B51A7E /* COGLES2ParallaxMapRenderer.h in Headers */,
+				83BED1AD1479348100B51A7E /* COGLES2Renderer2D.h in Headers */,
+				83BED1AF1479348100B51A7E /* COGLES2SLMaterialRenderer.h in Headers */,
+				83BED1B11479348100B51A7E /* COGLES2Texture.h in Headers */,
+				83BED1B21479348100B51A7E /* COGLES2Utils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5404,6 +5476,14 @@
 				839A2E9214779A0F001E91D6 /* COGLESDriver.cpp in Sources */,
 				839A2EAC14779B05001E91D6 /* COGLESTexture.cpp in Sources */,
 				839A2EAF14779B05001E91D6 /* COGLESExtensionHandler.cpp in Sources */,
+				83BED1A31479348000B51A7E /* COGLES2ExtensionHandler.cpp in Sources */,
+				83BED1A51479348100B51A7E /* COGLES2FixedPipelineShader.cpp in Sources */,
+				83BED1A81479348100B51A7E /* COGLES2NormalMapRenderer.cpp in Sources */,
+				83BED1AA1479348100B51A7E /* COGLES2ParallaxMapRenderer.cpp in Sources */,
+				83BED1AC1479348100B51A7E /* COGLES2Renderer2D.cpp in Sources */,
+				83BED1AE1479348100B51A7E /* COGLES2SLMaterialRenderer.cpp in Sources */,
+				83BED1B01479348100B51A7E /* COGLES2Texture.cpp in Sources */,
+				83BED1CF14793A0D00B51A7E /* COGLES2Driver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

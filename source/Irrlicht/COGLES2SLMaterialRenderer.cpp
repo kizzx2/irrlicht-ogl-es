@@ -17,7 +17,12 @@
 #include "EVertexAttributes.h"
 #include "COGLES2Texture.h"
 
+#if defined(_IRR_COMPILE_WITH_IPHONE_DEVICE_)
+#include <OpenGLES/ES1/gl.h>
+#include <OpenGLES/ES1/glext.h>
+#else
 #include <GLES2/gl2.h>
+#endif
 
 namespace irr
 {

@@ -16,9 +16,14 @@
 #include "CColorConverter.h"
 #include "irrString.h"
 
-#include <GLES2/gl2.h>
-#include <GLES2/gl2ext.h>
-#include <EGL/egl.h>
+#if defined(_IRR_COMPILE_WITH_IPHONE_DEVICE_)
+#    include <OpenGLES/ES2/gl.h>
+#    include <OpenGLES/ES2/glext.h>
+#else
+#    include <GLES2/gl2.h>
+#    include <GLES2/gl2ext.h>
+#    include <EGL/egl.h>
+#endif
 
 namespace
 {
