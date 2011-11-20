@@ -2028,6 +2028,8 @@ void COGLES1Driver::setBasicRenderStates(const SMaterial& material, const SMater
 	// Filtering has to be set for each texture layer
 	for (u32 i=0; i<MaxTextureUnits; ++i)
 	{
+        if(!CurrentTexture[i])
+            continue;
 		if (MultiTextureExtension)
 			extGlActiveTexture(GL_TEXTURE0 + i);
 		else if (i>0)

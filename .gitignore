@@ -1,4 +1,6 @@
 .svn
 build/
+*/build/
 xcuserdata/
 project.xcworkspace/
+lib/
